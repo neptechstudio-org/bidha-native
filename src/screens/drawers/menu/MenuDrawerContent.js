@@ -3,14 +3,14 @@ import { SafeAreaView, Dimensions } from 'react-native';
 import { DrawerItems } from 'react-navigation';
 import { AppLoading } from 'expo';
 import {
-  Container, Header, Body, Title, Left, Icon, Text,
+  Container, Header, Body, Title, Left, Icon, Text, Content, View, Drawer,
 } from 'native-base';
 import nativeBaseHandler from '../../../common/nativeBaseHander';
 import { APP_COLOR, APP_TITLE_TEXT_COLOR } from '../../../config';
 
 class MenuContent extends Component {
 
-  state={ renderMenu: true };
+  state={ renderMenu: true, showDrawer: false };
 
   async componentWillMount() {
     await nativeBaseHandler();
@@ -26,9 +26,13 @@ class MenuContent extends Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
-          <Header style={{backgroundColor: APP_COLOR}}>
+          <Header style={{ backgroundColor: APP_COLOR }}>
             <Left>
-              <Icon style={{ color: APP_TITLE_TEXT_COLOR }} name="arrow-back" onPress={() => this.props.navigation.closeDrawer()} />
+              <Icon style={{ color: APP_TITLE_TEXT_COLOR }} name="arrow-back" onPress={() => {
+                this.props.navigation.closeDrawer();
+                this.setState({ openDrawer: true })}
+              }
+              />
             </Left>
             <Body>
               <Title>
@@ -36,8 +40,15 @@ class MenuContent extends Component {
               </Title>
             </Body>
           </Header>
+          <Content>
+            <View>
+              <Text onPress={() => {
+                this.props.navigation.closeDrawer();
+                this.props.navigation.openDrawer()}}>click me</Text>
+            </View>
+            <DrawerItems {...this.props} />
+          </Content>
         </Container>
-        {/* <DrawerItems {...this.props} /> */}
       </SafeAreaView>
     );
   }

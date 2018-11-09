@@ -1,6 +1,7 @@
 import React from 'react';
 import { StatusBar, View } from 'react-native';
 import RootRounter from './src/routers';
+import Main from './src/screens';
 
 export default class App extends React.Component {
   state = {};

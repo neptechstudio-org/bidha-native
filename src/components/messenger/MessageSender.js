@@ -11,7 +11,7 @@ class MessageSender extends Component {
   state = {};
 
   render() {
-    const { message, changeMessageHandler } = this.props;
+    const { message, changeMessageHandler, sendMessageHandler } = this.props;
     return (
       <View style={{
         flexDirection: 'row',
@@ -42,7 +42,7 @@ class MessageSender extends Component {
           />
         </View>
         <View style={{ maxWidth: 50 }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => sendMessageHandler(message)}>
             <Icon name="send" style={{ color: APP_TITLE_TEXT_COLOR }} />
           </TouchableOpacity>
         </View>

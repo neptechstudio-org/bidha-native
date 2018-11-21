@@ -1,4 +1,4 @@
-import { MESSAGE_CHANGE } from './types';
+import { MESSAGE_CHANGE, MESSAGE_UPDATE } from './types';
 
 export const changeMessageHandler = (message) => {
   return {
@@ -7,4 +7,9 @@ export const changeMessageHandler = (message) => {
   };
 };
 
-export const sendMessageHandler = () => {};
+export const sendMessageHandler = (message) => {
+  return {
+    type: MESSAGE_UPDATE,
+    payload: message,
+  };
+};

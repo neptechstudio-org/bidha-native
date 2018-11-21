@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Alert } from 'react-native';
-import { ASTROLOGER_UPDATE } from './types';
+import { ASTROLOGER_UPDATE, MESSAGE_UPDATE } from './types';
 
 export const fetchInitialAppData = () => {
   return async (dispatch) => {
@@ -16,4 +16,4 @@ export const fetchInitialAppData = () => {
   };
 };
 
-export const test = '';
+export const test = {};

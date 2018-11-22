@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'native-base';
 import { KeyboardAvoidingView } from 'react-native';
-import MessageSender from './MessageSender';
-import MessageContainer from './MessageContainer';
+import MessageSender from './sender';
+import MessageContainer from './container';
 
 class index extends Component {
 

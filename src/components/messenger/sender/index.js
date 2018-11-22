@@ -3,8 +3,8 @@ import { TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, Icon } from 'native-base';
-import { APP_TITLE_TEXT_COLOR, SCREEN_WIDTH } from '../../config';
-import * as actions from '../../actions';
+import { APP_TITLE_TEXT_COLOR, SCREEN_WIDTH } from '../../../config';
+import * as actions from '../../../actions';
 
 class MessageSender extends Component {
 

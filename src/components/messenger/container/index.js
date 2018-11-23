@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { MenuProvider } from 'react-native-popup-menu';
 import { Content } from 'native-base';
 import messageListHandler from './message';
 
@@ -13,7 +14,9 @@ class MessageContainer extends Component {
     const { messageList } = this.props;
     return (
       <Content style={{ backgroundColor: '#E0E0E0', flexGrow: 1 }}>
-        {messageList.map((message, idx) => messageListHandler(message, idx))}
+        <MenuProvider>
+          {messageList.map((message, idx) => messageListHandler(message, idx))}
+        </MenuProvider>
       </Content>
     );
   }

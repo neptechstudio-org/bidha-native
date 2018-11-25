@@ -56,7 +56,7 @@ const messageTool = () => {
         </Text>
       </View>
       <View style={{ marginRight: 30, flexDirection: 'row' }}>
-        {statusView('sent')}
+        {statusView('error')}
       </View>
     </View>
   );
